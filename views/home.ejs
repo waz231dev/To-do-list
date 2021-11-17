@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>
+        <%=title%>
+    </title>
+    <link rel="stylesheet" href="/home.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script>
+        var task_container = document.getElementsByClassName('task-container');
+    </script>
+</head>
+
+<body>
+    <main>
+        <h1 id="heading">TODO App</h1>
+
+        <div id="form-container">
+            <form action="/add-task" method="post">
+                <div id="des-form-container">
+                    <label for="description">Description</label>
+                    <!-- <p>Description</p> -->
+                    <input type="text" id="description" name="description">
+                </div>
+                <div id="cat-date-container">
+                    <div style="border-right: 2px solid rgb(155,155,155);">
+                        <label for="category" style="position: absolute;">Category</label>
+                        <select name="category" id="category" required>
+                            <option value="" selected>Choose a category</option>
+                            <option value="school">School</option>
+                            <option value="personal">Personal</option>
+                            <option value="work">Work</option>
+                            <option value="home">Home</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <p>Due Date</p>
+                        <input type="date" name="date" id="date">
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <button type="submit" class="btn" id="add-btn"><i class="fas fa-plus"></i> Add Task</button>
+                </div>
+            </form>
+        </div>
+        <% if(task_list.length==0){ %>
+            <div class="no-task-container">
+                <h3>No Task added yet</h3>
+            </div>
+            <%}else{%>
+                <div style="overflow: hidden; height: 56%;">
+                    <form action="/del-tasks" method="get">
+                        <ul class="list-container">
+                            <% for(let i=0;i<task_list.length;i++){%>
+                                <li>
+                                    <div class="task-container <%= i%2==0? 'gray' : '' %>">
+                                        <p class="checkbox">
+                                            <input type="checkbox" name="<%= task_list[i]._id %>" id="">
+                                        </p>
+                                        <p class="description">
+                                            <%= task_list[i].description %>
+                                        </p>
+                                        <p class="category <%= bg_color[i%5]%>" </p>
+                                            <%= task_list[i].category %>
+                                        </p>
+                                        <p class="date">
+                                            <i class="far fa-calendar"></i>
+                                            <% if(task_list[i].date==null){%>
+                                                <%='No due date'%>
+                                                    <%}else{%>
+                                                        <%= task_list[i].date.toString().substring(4,15) %>
+                                                            <%}%>
+                                        </p>
+                                    </div>
+                                </li>
+                                <%}%>
+                        </ul>
+                        <div class="btn-container">
+                            <button id="del-btn" class="btn" type="submit"><i class="fas fa-trash"></i> Delete
+                                Tasks</button>
+                        </div>
+                    </form>
+                </div>
+                <%}%>
+    </main>
+</body>
+
+</html>

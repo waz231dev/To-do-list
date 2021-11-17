@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=M+PLUS+Rounded+1c:wght@300&family=Noto+Sans&family=Rubik:wght@300;400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+body{
+    background-image: radial-gradient(at top right, transparent 80%, #94B3FD 67.5%),
+        linear-gradient(135deg, #b177fc 0%, #B983FF 100%);
+    color: #000;
+    font-family: sans-serif;
+    height: 97vh;
+}
+main{
+    /* background:linear-gradient(110deg, #B983FF 60%,#94B3FD 60%); */
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 50%;
+    height: 93%;
+    margin: 20px auto 0px;
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 550px;
+}
+#heading{
+    color: rgb(245, 245, 245);
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto 25px;
+    background-color: #a96cf8;
+    width: 200px;
+    box-shadow: 1px 1px 5px 2px #b983ff;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#form-container{
+    color: rgb(100, 100, 100);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 300;
+    /* margin: 10px auto; */
+}
+
+#des-form-container{
+    border-top:2px solid rgb(155, 155, 155) ;
+    border-bottom: 2px solid rgb(155, 155, 155);
+    padding: 5px;
+}
+#description{
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+
+#cat-date-container{
+    display: flex;
+    height: 55px;
+    border-bottom: 2px solid rgb(155, 155, 155);
+    margin-bottom: 2px 5px;
+}
+
+#category{
+    border: none;
+    width: 100%;
+    height: 90%;
+    outline: none;
+    font-size: 17px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+#date{
+    width: 75%;
+    height: 60%;
+    font-size: 17px;
+    cursor: pointer;
+}
+#cat-date-container div{
+    width: 50%;
+    padding: 5px;
+}
+
+.btn-container{
+    height: 55px;
+    width: 120px;
+    margin: 15px auto 0;
+}
+
+.btn{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    color: rgb(245, 245, 245);
+    font-weight: 600;
+    border: none;
+}
+
+#add-btn{
+    background-color: rgb(59, 59, 59);
+}
+
+/* It contains the whole list */
+.list-container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 75%;
+}
+
+/* styling when there is no task in the list */
+.no-task-container{
+    margin: 50px auto 0px;
+    border-bottom: 5px solid #B983FF;
+    padding: 5px;
+}
+.task-container{
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    min-height: 50px;
+    width: 97%;
+    border-radius: 5px;
+    font-family: 'Rubik', sans-serif;
+}
+.checkbox{
+    padding: 5px;
+    padding-left: 0px;
+}
+.description{
+    width: 74%;
+    font-size: 1.2rem;
+    overflow-wrap: break-word;
+    padding-right: 14%;
+    font-weight: 400;
+    /* font-family: 'Courgette', cursive; */
+    
+}
+.category{
+    padding-top: 7px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 400;
+    width: 70px;
+    height: 22px;
+    text-align: center;
+}
+
+.date{
+    font-size: 0.8rem;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: rgb(110, 110, 110);
+}
+
+#del-btn{
+    background-color: red;
+}
+
+/* Background colors */
+.gray{
+    background-color: rgb(245, 245, 245);
+}
+.pink{
+    background-color: rgb(255, 151, 168);
+}
+.blue{
+    background-color: powderblue;
+}
+.red{
+    background-color: tomato;
+}
+.green{
+    background-color: teal;
+}
+.purple{
+    background-color: violet;
+}
+/* Styling Scrollbar */
+.list-container::-webkit-scrollbar-track
+{
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.list-container::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #F5F5F5;
+}
+
+.list-container::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
+	border: 2px solid #555555;
+}
